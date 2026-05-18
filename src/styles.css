@@ -343,3 +343,143 @@ pre {
     color: var(--cyan);
   }
 }
+
+
+/* Tree Builder Upgrade */
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 8px 0 18px;
+}
+
+.template-chip,
+.builder-toolbar button,
+.builder-row button,
+.tree-footer button {
+  border: 1px solid rgba(88, 255, 218, 0.18);
+  background: rgba(8, 14, 32, 0.62);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.template-chip.active {
+  border-color: rgba(130, 95, 255, 0.72);
+  box-shadow: 0 0 24px rgba(130, 95, 255, 0.2);
+  color: #e7ddff;
+}
+
+.tree-builder {
+  display: grid;
+  gap: 14px;
+}
+
+.builder-toolbar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.builder-toolbar button,
+.tree-footer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.builder-tree {
+  min-height: 360px;
+  max-height: 560px;
+  overflow: auto;
+  border: 1px solid rgba(88, 255, 218, 0.12);
+  border-radius: 18px;
+  padding: 12px;
+  background: rgba(2, 6, 18, 0.56);
+}
+
+.builder-row {
+  --depth: 0;
+  display: grid;
+  grid-template-columns: 28px 24px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin-left: calc(var(--depth) * 18px);
+  padding: 6px 8px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  color: #dffcff;
+}
+
+.builder-row:hover,
+.builder-row.selected {
+  background: rgba(88, 255, 218, 0.08);
+  border-color: rgba(88, 255, 218, 0.22);
+}
+
+.icon-button {
+  width: 28px;
+  height: 28px;
+  padding: 0 !important;
+}
+
+.node-symbol {
+  color: #74ffe1;
+  text-shadow: 0 0 12px rgba(88,255,218,.55);
+}
+
+.node-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+  opacity: .78;
+}
+
+.row-actions button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.empty-state {
+  padding: 26px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed rgba(88,255,218,.2);
+  border-radius: 18px;
+}
+
+.tree-footer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.danger-soft {
+  border-color: rgba(255, 97, 137, 0.24) !important;
+  color: #ffc6d6 !important;
+}
+
+.save-note {
+  margin-top: 12px;
+  color: #8fffe8;
+  font-size: .9rem;
+}
+
+@media (min-width: 720px) {
+  .builder-toolbar {
+    grid-template-columns: 1fr auto auto auto;
+  }
+}
